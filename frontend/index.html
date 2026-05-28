@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="cabecalho">
+        <h1>Minhas Tarefas</h1>
+        <p class="subtitulo">Organize o que precisa ser feito</p>
+      </header>
+
+      <section class="form" aria-label="Adicionar tarefa">
+        <input
+          type="text"
+          id="campo-titulo"
+          data-cy="campo-titulo"
+          placeholder="O que precisa ser feito?"
+          maxlength="120"
+          autocomplete="off"
+        />
+        <button type="button" id="btn-adicionar" data-cy="btn-adicionar">
+          Adicionar
+        </button>
+      </section>
+
+      <p id="mensagem-erro" class="erro" data-cy="mensagem-erro" role="alert" hidden></p>
+
+      <section class="lista-area">
+        <ul id="lista-tarefas" data-cy="lista-tarefas" class="lista"></ul>
+        <p id="lista-vazia" class="vazia" data-cy="lista-vazia">
+          Nenhuma tarefa por aqui. Adicione a primeira!
+        </p>
+      </section>
+
+      <footer class="rodape">
+        <span id="contador" data-cy="contador">0 tarefa(s)</span>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

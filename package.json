@@ -1,0 +1,30 @@
+{
+  "name": "lista-tarefas",
+  "version": "1.0.0",
+  "description": "Aplicação web (HTML/CSS/JS + Express) com testes Cypress de frontend e backend.",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "cy:open": "cypress open",
+    "test:frontend": "start-server-and-test start http://localhost:3000 \"cypress run --spec cypress/e2e/frontend.cy.js\"",
+    "test:backend": "start-server-and-test start http://localhost:3000 \"cypress run --spec cypress/e2e/backend.cy.js\"",
+    "test": "start-server-and-test start http://localhost:3000 \"cypress run\""
+  },
+  "keywords": [
+    "express",
+    "cypress",
+    "testes",
+    "ci"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.4.1",
+    "helmet": "^8.0.0"
+  },
+  "devDependencies": {
+    "cypress": "^15.16.0",
+    "start-server-and-test": "^2.0.10"
+  }
+}

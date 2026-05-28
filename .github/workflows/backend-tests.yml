@@ -1,0 +1,30 @@
+name: Testes Backend
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  testes-backend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Executar testes de backend (Cypress)
+        uses: cypress-io/github-action@v6
+        with:
+          install: false
+          start: npm start
+          wait-on: http://localhost:3000
+          wait-on-timeout: 60
+          spec: cypress/e2e/backend.cy.js
