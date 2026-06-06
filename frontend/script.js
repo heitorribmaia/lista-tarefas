@@ -1,6 +1,6 @@
 'use strict';
 
-(function () {
+(function () { 
   const API = '/api/tarefas';
 
   const campoTitulo = document.getElementById('campo-titulo');
